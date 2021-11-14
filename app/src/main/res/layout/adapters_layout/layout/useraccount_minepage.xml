@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:minHeight="42dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/minepage_login_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/homepage_title"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/minepage_login_userIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/minepage_usericon_corner"
+            android:src="@mipmap/haimian_usericon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/minepage_login_userName"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/register_username_hint"
+            android:textColor="@color/white"
+            android:textSize="8pt"
+            app:layout_constraintLeft_toRightOf="@id/minepage_login_userIcon"
+            app:layout_constraintTop_toTopOf="@id/minepage_login_userIcon" />
+
+        <TextView
+            android:id="@+id/minepage_login_userSign"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/Signature"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintLeft_toLeftOf="@id/minepage_login_userName"
+            app:layout_constraintTop_toBottomOf="@id/minepage_login_userName" />
+
+
+        <Button
+            android:id="@+id/minepage_login_bt"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/login_or_register"
+            android:textColor="@color/white"
+            android:textSize="5pt"
+            android:theme="@style/publishPage_button"
+            app:layout_constraintTop_toBottomOf="@id/minepage_login_userSign"
+            app:layout_constraintLeft_toLeftOf="@id/minepage_login_userSign"/>
+
+        <Button
+            android:id="@+id/minepage_infoEdit_bt"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/Edit_information"
+            android:textColor="@color/white"
+            android:textSize="5pt"
+            android:theme="@style/publishPage_button"
+            app:layout_constraintTop_toBottomOf="@id/minepage_login_userSign"
+            app:layout_constraintLeft_toLeftOf="@id/minepage_login_userSign"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

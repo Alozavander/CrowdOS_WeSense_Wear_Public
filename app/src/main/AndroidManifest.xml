@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.wesense_wearos">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许程序访问WiFi网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-feature android:name="android.hardware.type.watch" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        tools:replace="android:theme"
+        android:theme="@android:style/Theme.Light.NoTitleBar">
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.DeviceDefault.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.Activity_Home_Wear"/>
+        <activity android:name=".activities.Activity_Task_Detail"/>
+        <activity android:name=".activities.Activity_Publish_Wear"/>
+        <activity android:name=".activities.Activity_Mine_Wear"/>
+        <activity android:name=".activities.mines_listitem.Activity_mine_minor1_publish"/>
+        <activity android:name=".activities.mines_listitem.Activity_mine_minor2_accepted"/>
+        <activity android:name=".activities.mines_listitem.Activity_mine_minor5_sensorData"/>
+        <activity android:name=".activities.mines_listitem.Activity_mine_minor5_sensorData_Delete"/>
+        <activity android:name=".activities.mines_listitem.Activity_mine_minor5_sensorData_sensorContent"/>
+        <activity android:name=".activities.mines_listitem.Activity_mine_minor7_setting"/>
+        <activity android:name=".activities.mines_listitem.Activity_mine_setting_general_multilan"/>
+        <activity android:name=".activities.mines_listitem.Activity_Task_Detail_Published"/>
+        <activity android:name=".activities.Activity_Remind_Wear"/>
+        <activity android:name=".activities.Activity_login_Wear"/>
+        <activity android:name=".activities.Activity_pwdFind"/>
+        <activity android:name=".activities.publish_activities.Activity_publish_basictask_1"/>
+        <activity android:name=".activities.publish_activities.Activity_publish_sensortask_2"/>
+        <activity android:name=".EmailRegiste.Activity_EmailRegister"/>
+        <activity android:name=".EmailRegiste.Activity_EmailRegister_PasswordSet"/>
+        <activity android:name=".activities.remind_activities.Activity_mine_remind_recomment"/>
+        <activity android:name=".activities.remind_activities.Activity_mine_remind_doing"/>
+        <activity android:name=".activities.remind_activities.Activity_mine_remind_done"/>
+        <activity android:name=".activities.Activity_EditInfo_Wear"/>
+        <activity android:name=".activities.mines_listitem.Activity_mine_setting_general"/>
+        <activity android:name=".taskSubmit.Activity_Task_Submit"/>
+        <service android:name="com.example.sense_function.sensorFunction.SensorService"/>
+        <activity android:name=".activities.SenseDataDisplay.SQLiteDataDisplay"/>
+        <service android:name=".SenseDataUploadService"/>
+    </application>
+
+</manifest>
